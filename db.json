@@ -1,0 +1,53 @@
+{
+  "posts": [
+    {
+      "id": 4,
+      "firstName": "john ",
+      "lastName": "Doe",
+      "mobile": "546464",
+      "email": "john@gmail.com",
+      "dateOfBirth": "564564",
+      "streetAddress": "4sgfsgfsdf",
+      "city": "Sandton",
+      "postalCode": "sdfsdf",
+      "country": "South Africa",
+      "skill": "HRdsfsdf",
+      "yrsExp": "sdfsdf",
+      "seniorityRating": "dsfsdfsdf"
+    },
+    {
+      "id": 5,
+      "firstName": "Jane",
+      "lastName": "Moyo",
+      "mobile": "06214596565",
+      "email": "jane@gmail.com",
+      "dateOfBirth": "09 October 2022",
+      "streetAddress": "fsdfsdf",
+      "city": "Sandton",
+      "postalCode": "dsfsdfsd",
+      "country": "South Africa",
+      "skill": "Tester",
+      "yrsExp": "fdsdf",
+      "seniorityRating": "sdfsdfsdf"
+    },
+    {
+      "id": 10,
+      "firstName": "sdfsdf",
+      "lastName": "sdfsdf",
+      "mobile": "dsfsdf",
+      "email": "dsfsdf",
+      "dateOfBirth": "dsfsdf",
+      "streetAddress": "sdfsdf",
+      "city": "sdfsdf",
+      "postalCode": "dsfsd",
+      "country": "dsfsd",
+      "skill": "dsfsd",
+      "yrsExp": "sdfsdf",
+      "seniorityRating": "dsfsdf"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

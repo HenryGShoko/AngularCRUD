@@ -3,6 +3,7 @@
     <h1>Employee application</h1>
     <div class="d-flex">
       <button
+        (click)="clickAddEmployee()"
         type="button"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
@@ -34,24 +35,35 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1</td>
-      <td>Henry</td>
-      <td>Shoko</td>
-      <td>gshokx91@gmail.com</td>
-      <td>062 149 6491</td>
-      <td>$90000</td>
-      <td>1</td>
-      <td>Main Street</td>
-      <td>2194</td>
-      <td>South Africa</td>
-      <td>Developer</td>
-      <td>Expert</td>
+    <tr *ngFor="let row of employeeData">
+      <td>{{ row.id }}</td>
+      <td>{{ row.firstName }}</td>
+      <td>{{ row.lastName }}</td>
+      <td>{{ row.firstName }}</td>
+      <td>{{ row.mobile }}</td>
+      <td>{{ row.email }}</td>
+      <td>{{ row.dateOfBirth }}</td>
+      <td>{{ row.streetAddress }}</td>
+      <td>{{ row.city }}</td>
+      <td>{{ row.postalCode }}</td>
+      <td>{{ row.country }}</td>
+      <td>{{ row.skill }}</td>
+      <td>{{ row.yrsExp }}</td>
+      <td>{{ row.seniorityRating }}</td>
 
-      <td>$8</td>
       <td>
-        <button class="btn btn-info">Edit</button>
-        <button class="btn btn-danger mx-3">Delete</button>
+        <button
+          (click)="onEdit(row)"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          class="btn btn-info"
+        >
+          Edit
+        </button>
+        <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">
+          Delete
+        </button>
       </td>
     </tr>
   </tbody>
@@ -129,7 +141,7 @@
             >
             <input
               type="text"
-              formControlName="dateofbirth"
+              formControlName="dateOfBirth"
               class="form-control"
               id="exampleInputPassword1"
             />
@@ -140,7 +152,7 @@
             >
             <input
               type="text"
-              formControlName="streetaddress"
+              formControlName="streetAddress"
               class="form-control"
               id="exampleInputPassword1"
             />
@@ -163,7 +175,7 @@
               >
               <input
                 type="text"
-                formControlName="postalcode"
+                formControlName="postalCode"
                 class="form-control"
                 id="postalCodeInput"
               />
@@ -199,7 +211,7 @@
               <label for="yrsExpInput" class="form-label">Yrs Exp</label>
               <input
                 type="text"
-                formControlName="yrsexp"
+                formControlName="yrsExp"
                 class="form-control"
                 id="yrsExpInput"
                 aria-describedby="yrsExpHelp"
@@ -212,7 +224,7 @@
               >
               <input
                 type="text"
-                formControlName="seniorityrating"
+                formControlName="seniorityRating"
                 class="form-control"
                 id="seniorityRatingInput"
                 aria-describedby="seniorityRatingHelp"
@@ -223,10 +235,30 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        <button
+          type="button"
+          id="cancel"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
           Close
         </button>
-        <button type="button" class="btn btn-primary">Add</button>
+        <button
+          *ngIf="showAdd"
+          type="button"
+          (click)="postEmployeeDetails()"
+          class="btn btn-primary"
+        >
+          Add
+        </button>
+        <button
+          *ngIf="showUpdate"
+          type="button"
+          (click)="updateEmployeeDetails()"
+          class="btn btn-primary"
+        >
+          Update
+        </button>
       </div>
     </div>
   </div>
