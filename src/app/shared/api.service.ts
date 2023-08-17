@@ -6,9 +6,11 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class ApiService {
+  public employeeAPIUrl: string = 'https://localhost:44349/api/Employee/';
+
   constructor(private http: HttpClient) {}
 
-  postEmployee(data: any) {
+  PostEmployee(data: any) {
     return this.http.post<any>('http://localhost:3000/posts/', data).pipe(
       map((res: any) => {
         return res;
@@ -16,23 +18,24 @@ export class ApiService {
     );
   }
 
-  getEmployee() {
-    return this.http.get<any>('http://localhost:3000/posts/').pipe(
+  DeleteEmployee(id: number) {
+    return this.http.delete<any>('http://localhost:3000/posts/' + id).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
 
-  updateEmployee(data: any, id: number) {
+  UpdateEmployee(data: any, id: number) {
     return this.http.put<any>('http://localhost:3000/posts/' + id, data).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  deleteEmployee(id: number) {
-    return this.http.delete<any>('http://localhost:3000/posts/' + id).pipe(
+
+  GetEmployees() {
+    return this.http.get<any>(`${this.employeeAPIUrl}get_all_employees`).pipe(
       map((res: any) => {
         return res;
       })

@@ -33,7 +33,7 @@ export class EmployeeDashboardComponent implements OnInit {
       yrsExp: [''],
       seniorityRating: [''],
     });
-    this.getAllEmployee();
+    this.GetEmployeeDetails();
   }
 
   clickAddEmployee() {
@@ -56,37 +56,37 @@ export class EmployeeDashboardComponent implements OnInit {
     this.employeeModelObj.seniorityRating =
       this.formValue.value.seniorityRating;
 
-    this.api.postEmployee(this.employeeModelObj).subscribe(
+    this.api.PostEmployee(this.employeeModelObj).subscribe(
       (res: any) => {
         console.log('res');
         alert('Employee created successfully');
         let ref = document.getElementById('cancel');
         ref?.click();
         this.formValue.reset();
-        this.getAllEmployee();
+        this.GetEmployeeDetails();
       },
       (err: any) => {
         console.log('something went wrong');
       }
     );
   }
+  GetEmployeeDetails() {
+    this.api.GetEmployees().subscribe((res) => {
+      this.employeeData = res.employeeDetails;
+    });
+  }
+
   // getAllEmployee() {
-  //   this.api.getEmployee().subscribe((res) => {
+  //   this.api.GetEmployees().subscribe((res) => {
+  //     this.allEmployees = res;
   //     this.employeeData = res;
   //   });
   // }
 
-  getAllEmployee() {
-    this.api.getEmployee().subscribe((res) => {
-      this.allEmployees = res;
-      this.employeeData = res;
-    });
-  }
-
   deleteEmployee(row: any) {
-    this.api.deleteEmployee(row.id).subscribe((res) => {
+    this.api.DeleteEmployee(row.id).subscribe((res) => {
       alert('Employee  deleted');
-      this.getAllEmployee();
+      this.GetEmployeeDetails();
     });
   }
 
@@ -124,13 +124,13 @@ export class EmployeeDashboardComponent implements OnInit {
       this.formValue.value.seniorityRating;
 
     this.api
-      .updateEmployee(this.employeeModelObj, this.employeeModelObj.id)
+      .UpdateEmployee(this.employeeModelObj, this.employeeModelObj.id)
       .subscribe((res) => {
         alert('Updated successfully');
         let ref = document.getElementById('cancel');
         ref?.click();
         this.formValue.reset();
-        this.getAllEmployee();
+        this.GetEmployeeDetails();
       });
   }
   // onSearch(event: Event) {}
