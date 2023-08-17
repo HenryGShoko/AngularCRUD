@@ -19,11 +19,13 @@ export class ApiService {
   }
 
   DeleteEmployee(id: number) {
-    return this.http.delete<any>('http://localhost:3000/posts/' + id).pipe(
-      map((res: any) => {
-        return res;
-      })
-    );
+    return this.http
+      .delete<any>(`${this.employeeAPIUrl}delete_employee/` + id)
+      .pipe(
+        map((res: any) => {
+          return res;
+        })
+      );
   }
 
   UpdateEmployee(data: any) {
