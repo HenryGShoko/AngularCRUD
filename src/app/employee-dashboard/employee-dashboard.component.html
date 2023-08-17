@@ -69,19 +69,19 @@
   </thead>
   <tbody>
     <tr *ngFor="let row of employeeData">
-      <td>{{ row.id }}</td>
-      <td>{{ row.firstName }}</td>
-      <td>{{ row.lastName }}</td>
-      <td>{{ row.mobile }}</td>
-      <td>{{ row.email }}</td>
-      <td>{{ row.dateOfBirth }}</td>
-      <td>{{ row.streetAddress }}</td>
-      <td>{{ row.city }}</td>
-      <td>{{ row.postalCode }}</td>
-      <td>{{ row.country }}</td>
-      <td>{{ row.skill }}</td>
-      <td>{{ row.yrsExp }}</td>
-      <td>{{ row.seniorityRating }}</td>
+      <td data-title="Employee ID">{{ row.id }}</td>
+      <td data-title="First Name">{{ row.firstName }}</td>
+      <td data-title="Last Name">{{ row.lastName }}</td>
+      <td data-title="Mobile No.">{{ row.mobile }}</td>
+      <td data-title="Email ID">{{ row.email }}</td>
+      <td data-title="Date of Birth.">{{ row.dateOfBirth }}</td>
+      <td data-title="Street Address">{{ row.streetAddress }}</td>
+      <td data-title="City">{{ row.city }}</td>
+      <td data-title="Postal Code">{{ row.postalCode }}</td>
+      <td data-title="Country">{{ row.country }}</td>
+      <td data-title="Skill">{{ row.skill }}</td>
+      <td data-title="Yrs Exp">{{ row.yrsExp }}</td>
+      <td data-title="Seniority Rating">{{ row.seniorityRating }}</td>
 
       <td>
         <button
