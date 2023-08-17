@@ -1,0 +1,71 @@
+/* General styles (from your provided code) */
+.white-text {
+    color: white;
+}
+
+.centered-container {
+    padding-left: 30%;   
+    padding-right: 30%;  
+    text-align: center;  
+}
+
+.bg-primary {
+    background-color: #5d0090 !important;
+}
+
+.table th, .table td {
+    background-color: #4e007a;
+    border-color: #3c005c;
+}
+
+.modal-content {
+    background-color: #5d0090;
+}
+
+.table.mt-3,
+.table.mt-3 th,
+.table.mt-3 td,
+.table.mt-3 tr {
+    color: #ffffff;
+}
+
+.custom-table tbody td {
+    background-color: grey;
+}
+
+/* Responsive Table for small screens */
+@media only screen and (max-width: 768px) { 
+    .table thead {
+        display: none; /* Hide headers */
+    }
+
+    .table tr {
+        margin-bottom: 0.625em;
+        display: block;
+    }
+
+    .table td {
+        display: block; 
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    .table td::before {
+        content: attr(data-title);
+        position: absolute;
+        left: 0;
+        padding-left: 15px;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    /* If you want borders on mobile, you can add these */
+    .table td {
+        border-bottom: 1px solid #3c005c;
+    }
+
+    .table td:last-child {
+        border-bottom: 0;
+    }
+}

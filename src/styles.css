@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #5d0090; /* This is a dark purple color */
+  color: #ffffff; /* Setting the default text color to white for better contrast */
+}
