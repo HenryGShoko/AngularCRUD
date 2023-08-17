@@ -1,13 +1,15 @@
 <nav class="navbar navbar-light bg-primary">
   <div class="container-fluid centered-container">
-    <div class="white-text">
-      <h1>Employees</h1>
-      <p>There are {{ employeeData?.length || 0 }} employees</p>
-    </div>
+    <!-- Navbar Content -->
+    <div class="navbar-content">
+      <!-- Title and Employee Count -->
+      <div class="white-text title-section">
+        <h1>Employees</h1>
+        <p>There are {{ employeeData?.length || 0 }} employees</p>
+      </div>
 
-    <div class="container">
       <!-- Search Box -->
-      <div class="mb-3">
+      <div class="search-section">
         <input
           type="text"
           class="form-control"
@@ -16,34 +18,27 @@
         />
       </div>
 
-      <!-- List of Employees -->
-      <ul>
-        <li *ngFor="let employee of employeeData">
-          {{ employee.firstName }} {{ employee.lastName }}
-        </li>
-      </ul>
-    </div>
+      <!-- Filter Dropdown -->
+      <div class="filter-section">
+        <select class="form-select" (change)="onSearch($event)">
+          <option value="" disabled selected>Filter by</option>
+          <option value="firstName">First Name</option>
+          <option value="lastName">Last Name</option>
+        </select>
+      </div>
 
-    <!-- Filter by dropdown -->
-
-    <div class="mb-3">
-      <select class="form-select" (change)="onSearch($event)">
-        <option value="" disabled selected>Filter by</option>
-        <option value="firstName">First Name</option>
-        <option value="lastName">Last Name</option>
-      </select>
-    </div>
-
-    <div class="d-flex">
-      <button
-        (click)="clickAddEmployee()"
-        type="button"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
-        class="btn btn-success"
-      >
-        &#43; Add Employee
-      </button>
+      <!-- Add Employee Button -->
+      <div class="add-btn-section">
+        <button
+          (click)="clickAddEmployee()"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          class="btn btn-success"
+        >
+          &#43; Add Employee
+        </button>
+      </div>
     </div>
   </div>
 </nav>

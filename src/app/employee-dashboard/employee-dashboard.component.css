@@ -1,12 +1,32 @@
-/* General styles (from your provided code) */
 .white-text {
     color: white;
 }
 
+
 .centered-container {
-    padding-left: 30%;   
-    padding-right: 30%;  
-    text-align: center;  
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    height: 100%;            
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;          
+    width: 80%;                   
+}
+
+
+/* Styles for the individual sections of the navbar (optional for clarity) */
+.title-section, .search-section, .filter-section, .add-btn-section {
+    display: flex;
+    align-items: center;
+}
+
+/* Example of giving a fixed width to the search input to prevent it from stretching too much */
+.search-section .form-control {
+    width: 250px;
 }
 
 .bg-primary {
@@ -33,10 +53,17 @@
     background-color: grey;
 }
 
+.title-section {
+    flex-direction: column; 
+    align-items: start;    
+}
+
 /* Responsive Table for small screens */
 @media only screen and (max-width: 768px) { 
+
+
     .table thead {
-        display: none; /* Hide headers */
+        display: none; 
     }
 
     .table tr {
@@ -60,7 +87,6 @@
         font-weight: bold;
     }
 
-    /* If you want borders on mobile, you can add these */
     .table td {
         border-bottom: 1px solid #3c005c;
     }
