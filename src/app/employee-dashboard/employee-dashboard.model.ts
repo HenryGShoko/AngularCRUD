@@ -1,15 +1,15 @@
 export class EmployeeModel {
-  id: number = 0;
-  firstName: string = '';
-  lastName: string = '';
-  mobile: string = '';
-  email: string = '';
-  dateOfBirth: string = '';
-  streetAddress: string = '';
-  city: string = '';
-  postalCode: string = '';
-  country: string = '';
-  skill: string = '';
-  yrsExp = '';
-  seniorityRating: string = '';
+  Id: number = 0;
+  FirstName: string = '';
+  LastName: string = '';
+  Mobile: string = '';
+  Email: string = '';
+  DateOfBirth: string = '';
+  StreetAddress: string = '';
+  City: string = '';
+  PostalCode: string = '';
+  Country: string = '';
+  Skill: string = '';
+  YrsExp = '';
+  SeniorityRating: string = '';
 }

@@ -42,18 +42,18 @@ export class EmployeeDashboardComponent implements OnInit {
     this.showUpdate = false;
   }
   postEmployeeDetails() {
-    this.employeeModelObj.firstName = this.formValue.value.firstName;
-    this.employeeModelObj.lastName = this.formValue.value.lastName;
-    this.employeeModelObj.mobile = this.formValue.value.mobile;
-    this.employeeModelObj.email = this.formValue.value.email;
-    this.employeeModelObj.dateOfBirth = this.formValue.value.dateOfBirth;
-    this.employeeModelObj.streetAddress = this.formValue.value.streetAddress;
-    this.employeeModelObj.city = this.formValue.value.city;
-    this.employeeModelObj.postalCode = this.formValue.value.postalCode;
-    this.employeeModelObj.country = this.formValue.value.country;
-    this.employeeModelObj.skill = this.formValue.value.skill;
-    this.employeeModelObj.yrsExp = this.formValue.value.yrsExp;
-    this.employeeModelObj.seniorityRating =
+    this.employeeModelObj.FirstName = this.formValue.value.firstName;
+    this.employeeModelObj.LastName = this.formValue.value.lastName;
+    this.employeeModelObj.Mobile = this.formValue.value.mobile;
+    this.employeeModelObj.Email = this.formValue.value.email;
+    this.employeeModelObj.DateOfBirth = this.formValue.value.dateOfBirth;
+    this.employeeModelObj.StreetAddress = this.formValue.value.streetAddress;
+    this.employeeModelObj.City = this.formValue.value.city;
+    this.employeeModelObj.PostalCode = this.formValue.value.postalCode;
+    this.employeeModelObj.Country = this.formValue.value.country;
+    this.employeeModelObj.Skill = this.formValue.value.skill;
+    this.employeeModelObj.YrsExp = this.formValue.value.yrsExp;
+    this.employeeModelObj.SeniorityRating =
       this.formValue.value.seniorityRating;
 
     this.api.PostEmployee(this.employeeModelObj).subscribe(
@@ -93,7 +93,7 @@ export class EmployeeDashboardComponent implements OnInit {
   onEdit(row: any) {
     this.showAdd = false;
     this.showUpdate = true;
-    this.employeeModelObj.id = row.id;
+    this.employeeModelObj.Id = row.id;
     this.formValue.controls['firstName'].setValue(row.firstName);
     this.formValue.controls['lastName'].setValue(row.lastName);
     this.formValue.controls['mobile'].setValue(row.mobile);
@@ -108,30 +108,28 @@ export class EmployeeDashboardComponent implements OnInit {
     this.formValue.controls['seniorityRating'].setValue(row.seniorityRating);
   }
 
-  updateEmployeeDetails() {
-    this.employeeModelObj.firstName = this.formValue.value.firstName;
-    this.employeeModelObj.lastName = this.formValue.value.lastName;
-    this.employeeModelObj.mobile = this.formValue.value.mobile;
-    this.employeeModelObj.email = this.formValue.value.email;
-    this.employeeModelObj.dateOfBirth = this.formValue.value.dateOfBirth;
-    this.employeeModelObj.streetAddress = this.formValue.value.streetAddress;
-    this.employeeModelObj.city = this.formValue.value.city;
-    this.employeeModelObj.postalCode = this.formValue.value.postalCode;
-    this.employeeModelObj.country = this.formValue.value.country;
-    this.employeeModelObj.skill = this.formValue.value.skill;
-    this.employeeModelObj.yrsExp = this.formValue.value.yrsExp;
-    this.employeeModelObj.seniorityRating =
+  editEmployeeDetails() {
+    this.employeeModelObj.FirstName = this.formValue.value.firstName;
+    this.employeeModelObj.LastName = this.formValue.value.lastName;
+    this.employeeModelObj.Mobile = this.formValue.value.mobile;
+    this.employeeModelObj.Email = this.formValue.value.email;
+    this.employeeModelObj.DateOfBirth = this.formValue.value.dateOfBirth;
+    this.employeeModelObj.StreetAddress = this.formValue.value.streetAddress;
+    this.employeeModelObj.City = this.formValue.value.city;
+    this.employeeModelObj.PostalCode = this.formValue.value.postalCode;
+    this.employeeModelObj.Country = this.formValue.value.country;
+    this.employeeModelObj.Skill = this.formValue.value.skill;
+    this.employeeModelObj.YrsExp = this.formValue.value.yrsExp;
+    this.employeeModelObj.SeniorityRating =
       this.formValue.value.seniorityRating;
 
-    this.api
-      .UpdateEmployee(this.employeeModelObj, this.employeeModelObj.id)
-      .subscribe((res) => {
-        alert('Updated successfully');
-        let ref = document.getElementById('cancel');
-        ref?.click();
-        this.formValue.reset();
-        this.GetEmployeeDetails();
-      });
+    this.api.UpdateEmployee(this.employeeModelObj).subscribe((res) => {
+      alert('Updated successfully');
+      let ref = document.getElementById('close');
+      ref?.click();
+      this.formValue.reset();
+      this.GetEmployeeDetails();
+    });
   }
   // onSearch(event: Event) {}
 

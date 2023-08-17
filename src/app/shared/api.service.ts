@@ -11,7 +11,7 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   PostEmployee(data: any) {
-    return this.http.post<any>('http://localhost:3000/posts/', data).pipe(
+    return this.http.post<any>(`${this.employeeAPIUrl}add_employee`, data).pipe(
       map((res: any) => {
         return res;
       })
@@ -26,12 +26,14 @@ export class ApiService {
     );
   }
 
-  UpdateEmployee(data: any, id: number) {
-    return this.http.put<any>('http://localhost:3000/posts/' + id, data).pipe(
-      map((res: any) => {
-        return res;
-      })
-    );
+  UpdateEmployee(data: any) {
+    return this.http
+      .put<any>(`${this.employeeAPIUrl}update_employee`, data)
+      .pipe(
+        map((res: any) => {
+          return res;
+        })
+      );
   }
 
   GetEmployees() {
