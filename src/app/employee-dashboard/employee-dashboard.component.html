@@ -5,14 +5,23 @@
       <p>There are {{ employeeData?.length || 0 }} employees</p>
     </div>
 
-    <!-- Search filter -->
-    <div class="mb-3">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Search"
-        (input)="onSearch($event)"
-      />
+    <div class="container">
+      <!-- Search Box -->
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search name or surname"
+          (input)="onSearch($event)"
+        />
+      </div>
+
+      <!-- List of Employees -->
+      <ul>
+        <li *ngFor="let employee of employeeData">
+          {{ employee.firstName }} {{ employee.lastName }}
+        </li>
+      </ul>
     </div>
 
     <!-- Filter by dropdown -->

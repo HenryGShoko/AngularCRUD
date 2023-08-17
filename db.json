@@ -47,7 +47,7 @@
     },
     {
       "id": 11,
-      "firstName": "kjkljkl",
+      "firstName": "Mike",
       "lastName": "jkljklj",
       "mobile": "kljklj",
       "email": "kljklj",
@@ -59,21 +59,6 @@
       "skill": "kljklj",
       "yrsExp": "kljklj",
       "seniorityRating": "kljklj"
-    },
-    {
-      "id": 12,
-      "firstName": "iuiouio",
-      "lastName": "iouiou",
-      "mobile": "iouiou",
-      "email": "iouioui",
-      "dateOfBirth": "ouiou",
-      "streetAddress": "iouiou",
-      "city": "iouiou",
-      "postalCode": "iouio",
-      "country": "uiouio",
-      "skill": "uiou",
-      "yrsExp": "iouiou",
-      "seniorityRating": "iouio"
     }
   ],
   "comments": [],
