@@ -14,7 +14,7 @@ export class EmployeeDashboardComponent implements OnInit {
   employeeData!: any;
   showAdd!: boolean;
   showUpdate!: boolean;
-  allEmployees: any;
+  allEmployees: any[] = [];
 
   constructor(private formbuilder: FormBuilder, private api: ApiService) {}
 
@@ -73,15 +73,9 @@ export class EmployeeDashboardComponent implements OnInit {
   GetEmployeeDetails() {
     this.api.GetEmployees().subscribe((res) => {
       this.employeeData = res.employeeDetails;
+      this.allEmployees = res.employeeDetails;
     });
   }
-
-  // getAllEmployee() {
-  //   this.api.GetEmployees().subscribe((res) => {
-  //     this.allEmployees = res;
-  //     this.employeeData = res;
-  //   });
-  // }
 
   deleteEmployee(row: any) {
     this.api.DeleteEmployee(row.id).subscribe((res) => {
@@ -136,11 +130,13 @@ export class EmployeeDashboardComponent implements OnInit {
   onSearch(event: Event) {
     const query = (event.target as HTMLInputElement).value.toLowerCase();
 
-    this.employeeData = this.allEmployees.filter((employee: any) => {
-      return (
-        employee.firstName.toLowerCase().includes(query) ||
-        employee.lastName.toLowerCase().includes(query)
-      );
-    });
+    if (this.allEmployees) {
+      this.employeeData = this.allEmployees.filter((employee: any) => {
+        return (
+          employee.firstName.toLowerCase().includes(query) ||
+          employee.lastName.toLowerCase().includes(query)
+        );
+      });
+    }
   }
 }
