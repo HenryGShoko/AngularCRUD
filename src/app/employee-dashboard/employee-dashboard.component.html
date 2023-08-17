@@ -16,6 +16,10 @@
           placeholder="Search name or surname"
           (input)="onSearch($event)"
         />
+        <!-- Notification for no results -->
+        <div *ngIf="noResultsFound" class="no-results-notification">
+          No employee found.
+        </div>
       </div>
 
       <!-- Filter Dropdown -->

@@ -15,6 +15,7 @@ export class EmployeeDashboardComponent implements OnInit {
   showAdd!: boolean;
   showUpdate!: boolean;
   allEmployees: any[] = [];
+  noResultsFound: boolean = false;
 
   constructor(private formbuilder: FormBuilder, private api: ApiService) {}
 
@@ -125,7 +126,6 @@ export class EmployeeDashboardComponent implements OnInit {
       this.GetEmployeeDetails();
     });
   }
-  // onSearch(event: Event) {}
 
   onSearch(event: Event) {
     const query = (event.target as HTMLInputElement).value.toLowerCase();
@@ -137,6 +137,9 @@ export class EmployeeDashboardComponent implements OnInit {
           employee.lastName.toLowerCase().includes(query)
         );
       });
+
+      // Check if no results are found and toggle the flag.
+      this.noResultsFound = this.employeeData.length === 0;
     }
   }
 }

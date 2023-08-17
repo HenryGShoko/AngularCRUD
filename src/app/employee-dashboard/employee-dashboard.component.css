@@ -58,6 +58,12 @@
     align-items: start;    
 }
 
+.no-results-notification {
+    color: red;
+    margin-left: 10px;
+}
+
+
 /* Responsive Table for small screens */
 @media only screen and (max-width: 768px) { 
 
