@@ -135,7 +135,9 @@ export class EmployeeDashboardComponent implements OnInit {
         return (
           employee.firstName.toLowerCase().includes(query) ||
           employee.lastName.toLowerCase().includes(query) ||
-          employee.email.toLowerCase().includes(query)
+          employee.email.toLowerCase().includes(query) ||
+          employee.dateOfBirth.toLowerCase().includes(query) ||
+          employee.skill.toLowerCase().includes(query)
         );
       });
 
