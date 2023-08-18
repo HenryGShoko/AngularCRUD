@@ -135,6 +135,16 @@
                 class="form-control"
                 id="firstNameInput"
               />
+              <div
+                *ngIf="
+                  formValue.get('firstName')?.invalid &&
+                  (formValue.get('firstName')?.dirty ||
+                    formValue.get('firstName')?.touched)
+                "
+                class="text-danger"
+              >
+                Please enter first name.
+              </div>
             </div>
 
             <div class="col-md-6 mb-3">
@@ -145,6 +155,16 @@
                 class="form-control"
                 id="lastNameInput"
               />
+              <div
+                *ngIf="
+                  formValue.get('lastName')?.invalid &&
+                  (formValue.get('lastName')?.dirty ||
+                    formValue.get('lastName')?.touched)
+                "
+                class="text-danger"
+              >
+                Please enter last name.
+              </div>
             </div>
           </div>
           <div class="mb-3">
@@ -157,6 +177,16 @@
               class="form-control"
               id="exampleInputPassword1"
             />
+            <div
+              *ngIf="
+                formValue.get('mobile')?.invalid &&
+                (formValue.get('mobile')?.dirty ||
+                  formValue.get('mobile')?.touched)
+              "
+              class="text-danger"
+            >
+              Please enter mobile number.
+            </div>
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label"
@@ -168,6 +198,17 @@
               class="form-control"
               id="exampleInputPassword1"
             />
+
+            <div
+              *ngIf="
+                formValue.get('email')?.invalid &&
+                (formValue.get('email')?.dirty ||
+                  formValue.get('email')?.touched)
+              "
+              class="text-danger"
+            >
+              Please enter a valid email.
+            </div>
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label"
@@ -179,6 +220,16 @@
               class="form-control"
               id="exampleInputPassword1"
             />
+            <div
+              *ngIf="
+                formValue.get('dateOfBirth')?.invalid &&
+                (formValue.get('dateOfBirth')?.dirty ||
+                  formValue.get('dateOfBirth')?.touched)
+              "
+              class="text-danger"
+            >
+              Please enter date of birth.
+            </div>
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label"
@@ -190,6 +241,16 @@
               class="form-control"
               id="exampleInputPassword1"
             />
+            <div
+              *ngIf="
+                formValue.get('streetAddress')?.invalid &&
+                (formValue.get('streetAddress')?.dirty ||
+                  formValue.get('streetAddress')?.touched)
+              "
+              class="text-danger"
+            >
+              Please enter street address.
+            </div>
           </div>
           <div class="mb-3 row">
             <div class="col-md-4">
@@ -200,6 +261,16 @@
                 class="form-control"
                 id="cityInput"
               />
+              <div
+                *ngIf="
+                  formValue.get('city')?.invalid &&
+                  (formValue.get('city')?.dirty ||
+                    formValue.get('city')?.touched)
+                "
+                class="text-danger"
+              >
+                Please enter city.
+              </div>
             </div>
 
             <!-- Postal Code -->
@@ -213,6 +284,16 @@
                 class="form-control"
                 id="postalCodeInput"
               />
+              <div
+                *ngIf="
+                  formValue.get('postalCode')?.invalid &&
+                  (formValue.get('postalCode')?.dirty ||
+                    formValue.get('postalCode')?.touched)
+                "
+                class="text-danger"
+              >
+                Please enter postal code.
+              </div>
             </div>
 
             <!-- Country -->
@@ -224,6 +305,16 @@
                 class="form-control"
                 id="countryInput"
               />
+              <div
+                *ngIf="
+                  formValue.get('country')?.invalid &&
+                  (formValue.get('country')?.dirty ||
+                    formValue.get('country')?.touched)
+                "
+                class="text-danger"
+              >
+                Please enter country.
+              </div>
             </div>
           </div>
           <div class="row">
@@ -238,6 +329,16 @@
                 id="skillInput"
                 aria-describedby="skillHelp"
               />
+              <div
+                *ngIf="
+                  formValue.get('skill')?.invalid &&
+                  (formValue.get('skill')?.dirty ||
+                    formValue.get('skill')?.touched)
+                "
+                class="text-danger"
+              >
+                Please enter skill.
+              </div>
             </div>
 
             <div class="col-md-4 mb-3">
@@ -249,6 +350,16 @@
                 id="yrsExpInput"
                 aria-describedby="yrsExpHelp"
               />
+              <div
+                *ngIf="
+                  formValue.get('yrsExp')?.invalid &&
+                  (formValue.get('yrsExp')?.dirty ||
+                    formValue.get('yrsExp')?.touched)
+                "
+                class="text-danger"
+              >
+                Please enter yrsExp.
+              </div>
             </div>
 
             <div class="col-md-4 mb-3">
@@ -262,6 +373,16 @@
                 id="seniorityRatingInput"
                 aria-describedby="seniorityRatingHelp"
               />
+              <div
+                *ngIf="
+                  formValue.get('seniorityRating')?.invalid &&
+                  (formValue.get('seniorityRating')?.dirty ||
+                    formValue.get('seniorityRating')?.touched)
+                "
+                class="text-danger"
+              >
+                Please enter seniorityRating.
+              </div>
             </div>
           </div>
           <!-- End of the row -->

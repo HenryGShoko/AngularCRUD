@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../shared/api.service';
 import { EmployeeModel } from './employee-dashboard.model';
 
@@ -21,18 +21,18 @@ export class EmployeeDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({
-      firstName: [''],
-      lastName: [''],
-      mobile: [''],
-      email: [''],
-      dateOfBirth: [''],
-      streetAddress: [''],
-      city: [''],
-      postalCode: [''],
-      country: [''],
-      skill: [''],
-      yrsExp: [''],
-      seniorityRating: [''],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      mobile: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      dateOfBirth: ['', Validators.required],
+      streetAddress: ['', Validators.required],
+      city: ['', Validators.required],
+      postalCode: ['', Validators.required],
+      country: ['', Validators.required],
+      skill: ['', Validators.required],
+      yrsExp: ['', Validators.required],
+      seniorityRating: ['', Validators.required],
     });
     this.GetEmployeeDetails();
   }
