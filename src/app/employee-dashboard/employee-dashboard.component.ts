@@ -141,9 +141,8 @@ export class EmployeeDashboardComponent implements OnInit {
 
     this.api.UpdateEmployee(this.employeeModelObj).subscribe((res) => {
       alert('Updated successfully');
-      let ref = document.getElementById('close');
+      let ref = document.getElementById('cancel');
       ref?.click();
-      this.formValue.reset();
       this.GetEmployeeDetails();
     });
   }
