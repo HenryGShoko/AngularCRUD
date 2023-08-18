@@ -12,7 +12,7 @@
       <div class="search-section">
         <input
           type="text"
-          class="form-control"
+          class="form-control light-placeholder"
           placeholder="Search first name, last name, email, Date of Birth or skill "
           (input)="onSearch($event)"
         />
@@ -132,8 +132,9 @@
               <input
                 type="text"
                 formControlName="firstName"
-                class="form-control"
+                class="form-control light-placeholder"
                 id="firstNameInput"
+                placeholder="eg. John"
               />
               <div
                 *ngIf="
@@ -152,8 +153,9 @@
               <input
                 type="text"
                 formControlName="lastName"
-                class="form-control"
+                class="form-control light-placeholder"
                 id="lastNameInput"
+                placeholder="eg. Doe"
               />
               <div
                 *ngIf="
@@ -174,8 +176,9 @@
             <input
               type="text"
               formControlName="mobile"
-              class="form-control"
+              class="form-control light-placeholder"
               id="exampleInputPassword1"
+              placeholder="eg. +27 000 111 2222"
             />
             <div
               *ngIf="
@@ -195,8 +198,9 @@
             <input
               type="email"
               formControlName="email"
-              class="form-control"
+              class="form-control light-placeholder"
               id="exampleInputPassword1"
+              placeholder="eg. example@gmail.com"
             />
 
             <div
@@ -217,8 +221,9 @@
             <input
               type="text"
               formControlName="dateOfBirth"
-              class="form-control"
+              class="form-control light-placeholder"
               id="exampleInputPassword1"
+              placeholder="eg. yyyy-mm-dd"
             />
             <div
               *ngIf="
@@ -238,8 +243,9 @@
             <input
               type="text"
               formControlName="streetAddress"
-              class="form-control"
+              class="form-control light-placeholder"
               id="exampleInputPassword1"
+              placeholder="eg. 15 Main Street"
             />
             <div
               *ngIf="
@@ -258,8 +264,9 @@
               <input
                 type="text"
                 formControlName="city"
-                class="form-control"
+                class="form-control light-placeholder"
                 id="cityInput"
+                placeholder="eg. Sandton"
               />
               <div
                 *ngIf="
@@ -281,8 +288,9 @@
               <input
                 type="text"
                 formControlName="postalCode"
-                class="form-control"
+                class="form-control light-placeholder"
                 id="postalCodeInput"
+                placeholder="eg. 2130"
               />
               <div
                 *ngIf="
@@ -302,8 +310,9 @@
               <input
                 type="text"
                 formControlName="country"
-                class="form-control"
+                class="form-control light-placeholder"
                 id="countryInput"
+                placeholder="eg. South Africa"
               />
               <div
                 *ngIf="
@@ -325,9 +334,10 @@
               <input
                 type="text"
                 formControlName="skill"
-                class="form-control"
+                class="form-control light-placeholder"
                 id="skillInput"
                 aria-describedby="skillHelp"
+                placeholder="eg. Angular"
               />
               <div
                 *ngIf="
@@ -346,9 +356,10 @@
               <input
                 type="text"
                 formControlName="yrsExp"
-                class="form-control"
+                class="form-control light-placeholder"
                 id="yrsExpInput"
                 aria-describedby="yrsExpHelp"
+                placeholder="eg. 6"
               />
               <div
                 *ngIf="
@@ -369,9 +380,10 @@
               <input
                 type="text"
                 formControlName="seniorityRating"
-                class="form-control"
+                class="form-control light-placeholder"
                 id="seniorityRatingInput"
                 aria-describedby="seniorityRatingHelp"
+                placeholder="eg. Expert"
               />
               <div
                 *ngIf="

@@ -58,6 +58,10 @@
     align-items: start;    
 }
 
+.light-placeholder::-webkit-input-placeholder {
+    color: #cccccc;
+}
+
 .no-results-notification {
     color: red;
     margin-left: 10px;
