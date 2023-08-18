@@ -1,5 +1,5 @@
 export class EmployeeModel {
-  Id: number = 0;
+  Id: string = '';
   FirstName: string = '';
   LastName: string = '';
   Mobile: string = '';
