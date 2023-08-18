@@ -124,11 +124,17 @@
           aria-label="Close"
         ></button>
       </div>
+      <div class="required-indicator">
+        <span class="text-danger">*</span> required
+      </div>
+
       <div class="modal-body">
         <form [formGroup]="formValue">
           <div class="row">
             <div class="col-md-6 mb-3">
-              <label for="firstNameInput" class="form-label">First Name</label>
+              <label for="firstNameInput" class="form-label"
+                ><span class="text-danger">*</span>First Name
+              </label>
               <input
                 type="text"
                 formControlName="firstName"
@@ -149,7 +155,9 @@
             </div>
 
             <div class="col-md-6 mb-3">
-              <label for="lastNameInput" class="form-label">Last Name</label>
+              <label for="lastNameInput" class="form-label"
+                ><span class="text-danger">*</span>Last Name</label
+              >
               <input
                 type="text"
                 formControlName="lastName"
@@ -171,7 +179,7 @@
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label"
-              >Mobile Number</label
+              ><span class="text-danger">*</span>Mobile Number</label
             >
             <input
               type="text"
@@ -193,7 +201,7 @@
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label"
-              >Email ID</label
+              ><span class="text-danger">*</span>Email ID</label
             >
             <input
               type="email"
@@ -216,7 +224,7 @@
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label"
-              >Date of birth</label
+              ><span class="text-danger">*</span>Date of birth</label
             >
             <input
               type="text"
@@ -238,7 +246,7 @@
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label"
-              >Street Address</label
+              ><span class="text-danger">*</span>Street Address</label
             >
             <input
               type="text"
@@ -260,7 +268,9 @@
           </div>
           <div class="mb-3 row">
             <div class="col-md-4">
-              <label for="cityInput" class="form-label">City</label>
+              <label for="cityInput" class="form-label"
+                ><span class="text-danger">*</span>City</label
+              >
               <input
                 type="text"
                 formControlName="city"
@@ -283,7 +293,7 @@
             <!-- Postal Code -->
             <div class="col-md-4">
               <label for="postalCodeInput" class="form-label"
-                >Postal Code</label
+                ><span class="text-danger">*</span>Postal Code</label
               >
               <input
                 type="text"
@@ -306,7 +316,9 @@
 
             <!-- Country -->
             <div class="col-md-4">
-              <label for="countryInput" class="form-label">Country</label>
+              <label for="countryInput" class="form-label"
+                ><span class="text-danger">*</span>Country</label
+              >
               <input
                 type="text"
                 formControlName="country"
@@ -330,7 +342,9 @@
             <!-- Start of the row -->
 
             <div class="col-md-4 mb-3">
-              <label for="skillInput" class="form-label">Skill</label>
+              <label for="skillInput" class="form-label"
+                ><span class="text-danger">*</span>Skill</label
+              >
               <input
                 type="text"
                 formControlName="skill"
@@ -352,7 +366,9 @@
             </div>
 
             <div class="col-md-4 mb-3">
-              <label for="yrsExpInput" class="form-label">Yrs Exp</label>
+              <label for="yrsExpInput" class="form-label"
+                ><span class="text-danger">*</span>Yrs Exp</label
+              >
               <input
                 type="text"
                 formControlName="yrsExp"
@@ -375,7 +391,7 @@
 
             <div class="col-md-4 mb-3">
               <label for="seniorityRatingInput" class="form-label"
-                >Seniority Rating</label
+                ><span class="text-danger">*</span>Seniority Rating</label
               >
               <input
                 type="text"
@@ -404,7 +420,7 @@
         <button
           type="button"
           id="cancel"
-          class="btn btn-secondary"
+          class="btn btn-danger"
           data-bs-dismiss="modal"
         >
           Close
@@ -413,10 +429,12 @@
           *ngIf="showAdd"
           type="button"
           (click)="postEmployeeDetails()"
-          class="btn btn-primary"
+          class="btn btn-success"
+          [disabled]="!formValue.valid"
         >
           Add
         </button>
+
         <button
           *ngIf="showUpdate"
           type="button"

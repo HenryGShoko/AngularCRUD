@@ -64,8 +64,14 @@
 
 .no-results-notification {
     color: red;
-    margin-left: 10px;
+    margin-right: 40px;
 }
+
+.btn:disabled {
+    background-color: grey;
+  }
+  
+
 
 
 /* Responsive Table for small screens */
