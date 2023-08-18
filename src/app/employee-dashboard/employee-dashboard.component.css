@@ -18,13 +18,11 @@
 }
 
 
-/* Styles for the individual sections of the navbar (optional for clarity) */
 .title-section, .search-section, .filter-section, .add-btn-section {
     display: flex;
     align-items: center;
 }
 
-/* Example of giving a fixed width to the search input to prevent it from stretching too much */
 .search-section .form-control {
     width: 500px;
 }
@@ -71,6 +69,19 @@
     background-color: grey;
   }
   
+
+  .pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination-controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 
 
 

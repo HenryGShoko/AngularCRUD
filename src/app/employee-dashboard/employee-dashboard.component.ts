@@ -16,6 +16,9 @@ export class EmployeeDashboardComponent implements OnInit {
   showUpdate!: boolean;
   allEmployees: any[] = [];
   noResultsFound: boolean = false;
+  itemsPerPage: number = 10;
+  currentPage: number = 1;
+  totalPages!: number;
 
   constructor(private formbuilder: FormBuilder, private api: ApiService) {}
 
@@ -75,7 +78,25 @@ export class EmployeeDashboardComponent implements OnInit {
     this.api.GetEmployees().subscribe((res) => {
       this.employeeData = res.employeeDetails;
       this.allEmployees = res.employeeDetails;
+      this.totalPages = Math.ceil(this.employeeData.length / this.itemsPerPage);
     });
+  }
+
+  get paginatedEmployees() {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    return this.employeeData.slice(startIndex, startIndex + this.itemsPerPage);
+  }
+
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  previousPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
   }
 
   deleteEmployee(row: any) {
