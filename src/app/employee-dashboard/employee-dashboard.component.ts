@@ -134,7 +134,8 @@ export class EmployeeDashboardComponent implements OnInit {
       this.employeeData = this.allEmployees.filter((employee: any) => {
         return (
           employee.firstName.toLowerCase().includes(query) ||
-          employee.lastName.toLowerCase().includes(query)
+          employee.lastName.toLowerCase().includes(query) ||
+          employee.email.toLowerCase().includes(query)
         );
       });
 
