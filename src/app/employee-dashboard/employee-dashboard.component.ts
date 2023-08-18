@@ -166,4 +166,29 @@ export class EmployeeDashboardComponent implements OnInit {
       this.noResultsFound = this.employeeData.length === 0;
     }
   }
+
+  onFilterChange(event: any): void {
+    const selectedFilter = event.target.value;
+
+    // If no filter selected, revert to original data
+    if (!selectedFilter) {
+      this.employeeData = [...this.allEmployees];
+      return;
+    }
+
+    this.employeeData.sort((a: any, b: any) => {
+      // Handle numeric fields (like dateOfBirth if it's a timestamp)
+      if (selectedFilter === 'dateOfBirth' || selectedFilter === 'joinDate') {
+        return a[selectedFilter] - b[selectedFilter];
+      }
+
+      // Handle alphabetical fields
+      const nameA = a[selectedFilter].toLowerCase();
+      const nameB = b[selectedFilter].toLowerCase();
+
+      if (nameA < nameB) return -1;
+      if (nameA > nameB) return 1;
+      return 0;
+    });
+  }
 }
