@@ -41,7 +41,7 @@
           type="button"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
-          class="btn btn-success"
+          class="btn btn-primary"
         >
           &#43; Add Employee
         </button>
@@ -91,7 +91,7 @@
           type="button"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
-          class="btn btn-info"
+          class="btn btn-primary"
         >
           Edit
         </button>
@@ -447,6 +447,12 @@
     </div>
   </div>
 </div>
+<div *ngIf="employeeData?.length === 0" class="image-center">
+  <img src="assets/Icon.JPG" alt="Icon" class="centered-image" />
+  <h5>There is nothing here</h5>
+  <h5>Create a new employee by clicking the new button to get started</h5>
+</div>
+
 <div class="pagination-controls">
   <button (click)="previousPage()" [disabled]="currentPage === 1">
     Previous
