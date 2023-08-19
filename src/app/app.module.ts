@@ -13,9 +13,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EmployeeTableComponent } from './employee-table/employee-table.component';
 import { EmployeeModalComponent } from './employee-modal/employee-modal.component';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 @NgModule({
-  declarations: [AppComponent, EmployeeDashboardComponent, EmployeeTableComponent, EmployeeModalComponent],
+  declarations: [AppComponent, EmployeeDashboardComponent, EmployeeTableComponent, EmployeeModalComponent, PaginatorComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

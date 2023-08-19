@@ -1,3 +1,5 @@
+<!--NAVBAR START-->
+
 <nav class="navbar navbar-light bg-primary">
   <div class="container-fluid centered-container">
     <!-- Navbar Content -->
@@ -49,6 +51,10 @@
     </div>
   </div>
 </nav>
+
+<!--NAVBAR END-->
+
+<!--TABLE START-->
 
 <table class="table mt-3 custom-table">
   <thead>
@@ -103,7 +109,9 @@
   </tbody>
 </table>
 
-<!-- Modal -->
+<!--TABLE END-->
+
+<!-- MODAL START -->
 <div
   class="modal fade"
   id="exampleModal"
@@ -439,11 +447,20 @@
     </div>
   </div>
 </div>
+
+<!-- MODAL END -->
+
+<!-- IMAGE START -->
+
 <div *ngIf="employeeData?.length === 0" class="image-center">
   <img src="assets/Icon.JPG" alt="Icon" class="centered-image" />
   <h5>There is nothing here</h5>
   <h5>Create a new employee by clicking the new button to get started</h5>
 </div>
+
+<!-- IMAGE END -->
+
+<!-- PAGINATOR START -->
 
 <div class="pagination-controls">
   <button (click)="previousPage()" [disabled]="currentPage === 1">
@@ -454,3 +471,5 @@
     Next
   </button>
 </div>
+
+<!-- PAGINATOR END -->
