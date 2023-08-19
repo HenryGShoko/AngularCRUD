@@ -11,9 +11,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EmployeeTableComponent } from './employee-table/employee-table.component';
+import { EmployeeModalComponent } from './employee-modal/employee-modal.component';
 
 @NgModule({
-  declarations: [AppComponent, EmployeeDashboardComponent],
+  declarations: [AppComponent, EmployeeDashboardComponent, EmployeeTableComponent, EmployeeModalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
