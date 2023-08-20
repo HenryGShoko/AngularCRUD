@@ -6,10 +6,10 @@ import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashbo
 import { PaginatorComponent } from './paginator/paginator.component';
 
 const routes: Routes = [
-  { path: 'employee-table', component: EmployeeTableComponent },
-  { path: 'paginator', component: PaginatorComponent },
-  { path: 'employee-modal', component: EmployeeModalComponent },
-  { path: '', component: EmployeeDashboardComponent },
+  // { path: 'employee-table', component: EmployeeTableComponent },
+  // { path: 'paginator', component: PaginatorComponent },
+  // { path: 'employee-modal', component: EmployeeModalComponent },
+  // { path: '', component: EmployeeDashboardComponent },
 ];
 
 @NgModule({

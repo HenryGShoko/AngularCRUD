@@ -1,3 +1,21 @@
+::ng-deep .mat-form-field {
+    background-color:white;
+}
+
+::ng-deep  .cdk-overlay-container {
+    position: fixed;
+    z-index: 2000;
+    
+}
+
+.mat-input-element {
+  
+    color: black;
+ 
+}
+
+
+
 .white-text {
     color: white;
 }

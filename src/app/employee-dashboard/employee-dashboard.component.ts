@@ -19,6 +19,7 @@ export class EmployeeDashboardComponent implements OnInit {
   itemsPerPage: number = 10;
   currentPage: number = 1;
   totalPages!: number;
+  isDatepickerActive: boolean = false;
 
   constructor(private formbuilder: FormBuilder, private api: ApiService) {}
 
@@ -50,7 +51,10 @@ export class EmployeeDashboardComponent implements OnInit {
     this.employeeModelObj.LastName = this.formValue.value.lastName;
     this.employeeModelObj.Mobile = this.formValue.value.mobile;
     this.employeeModelObj.Email = this.formValue.value.email;
-    this.employeeModelObj.DateOfBirth = this.formValue.value.dateOfBirth;
+    this.employeeModelObj.DateOfBirth = this.formValue.value.dateOfBirth
+      .toISOString()
+      .substr(0, 10);
+
     this.employeeModelObj.StreetAddress = this.formValue.value.streetAddress;
     this.employeeModelObj.City = this.formValue.value.city;
     this.employeeModelObj.PostalCode = this.formValue.value.postalCode;
@@ -123,13 +127,13 @@ export class EmployeeDashboardComponent implements OnInit {
     this.formValue.controls['yrsExp'].setValue(row.yrsExp);
     this.formValue.controls['seniorityRating'].setValue(row.seniorityRating);
   }
-
   editEmployeeDetails() {
     this.employeeModelObj.FirstName = this.formValue.value.firstName;
     this.employeeModelObj.LastName = this.formValue.value.lastName;
     this.employeeModelObj.Mobile = this.formValue.value.mobile;
     this.employeeModelObj.Email = this.formValue.value.email;
     this.employeeModelObj.DateOfBirth = this.formValue.value.dateOfBirth;
+
     this.employeeModelObj.StreetAddress = this.formValue.value.streetAddress;
     this.employeeModelObj.City = this.formValue.value.city;
     this.employeeModelObj.PostalCode = this.formValue.value.postalCode;
@@ -139,12 +143,31 @@ export class EmployeeDashboardComponent implements OnInit {
     this.employeeModelObj.SeniorityRating =
       this.formValue.value.seniorityRating;
 
+    let selectedDate = this.formValue.value.dateOfBirth;
+
+    if (selectedDate instanceof Date) {
+      this.employeeModelObj.DateOfBirth = selectedDate
+        .toISOString()
+        .substr(0, 10);
+    } else if (typeof selectedDate === 'string' && selectedDate.trim() !== '') {
+      this.employeeModelObj.DateOfBirth = selectedDate.trim();
+    }
+
+    console.log('EmployeeModelObj:', this.employeeModelObj);
+
     this.api.UpdateEmployee(this.employeeModelObj).subscribe((res) => {
       alert('Updated successfully');
       let ref = document.getElementById('cancel');
       ref?.click();
       this.GetEmployeeDetails();
     });
+  }
+
+  setSelectedDate(selectedDate: Date) {
+    if (selectedDate) {
+      selectedDate.setHours(0, 0, 0, 0);
+      this.formValue.get('dateOfBirth')?.setValue(selectedDate);
+    }
   }
 
   onSearch(event: Event) {
